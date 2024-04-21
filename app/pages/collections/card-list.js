@@ -1,75 +1,298 @@
+import SpringCollection from "./card-collection";
 import CardCollection from "./card-collection";
 
-export default function CardList(){
-    const cards = [
+export default function CardList({season}){
+    const spring = [
     { 
         "id": 1,
-        "name": 'first card',
-        "category": 'character',
+        "name": 'Spring Archer',
+        "category": 'Character',
         "damage": 1,
         "health": 5, 
     },
     {
         "id": 2,
-        "name": 'second card', 
-        "category": 'character',
+        "name": 'Spring Barbarian', 
+        "category": 'Character',
         "damage": 2,
         "health": 3
     },
     {
         "id": 3,
-        "name": 'third card', 
-        "category": 'character',
+        "name": 'Spring Sorcerer', 
+        "category": 'Character',
         "damage": 2,
         "health": 3
     },
     {
         "id": 4,
-        "name": 'fourth card', 
-        "category": 'character',
+        "name": 'Spring Bow', 
+        "category": 'Equipment',
         "damage": 2,
         "health": 3
     },
     {
         "id": 5,
-        "name": 'fifth card', 
-        "category": 'character',
+        "name": 'Spring Axe', 
+        "category": 'Equipment',
         "damage": 2,
         "health": 3
     },
     {
-        "id": 5,
-        "name": 'sixth card', 
-        "category": 'equipment',
+        "id": 6,
+        "name": 'Spring Staff', 
+        "category": 'Equipment',
         "damage": 2,
         "health": 3
     },
     {
-        "id": 5,
-        "name": 'sixth card', 
-        "category": 'equipment',
+        "id": 7,
+        "name": 'Spring Arrow', 
+        "category": 'Equipment',
         "damage": 2,
         "health": 3
     },
     {
-        "id": 5,
-        "name": 'sixth card', 
-        "category": 'equipment',
+        "id": 8,
+        "name": 'Spring Fountain', 
+        "category": 'Building',
         "damage": 2,
         "health": 3
     },
     {
         
-        "id": 5,
-        "name": 'sixth card', 
-        "category": 'equipment',
+        "id": 9,
+        "name": 'Spring Flower', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 10,
+        "name": 'Spring Tree', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+]
+
+const winter = [
+    { 
+        "id": 1,
+        "name": '1 winter',
+        "category": 'Character',
+        "damage": 1,
+        "health": 5, 
+    },
+    {
+        "id": 2,
+        "name": '2 winter', 
+        "category": 'Character',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 3,
+        "name": '3 winter', 
+        "category": 'Character',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 4,
+        "name": '4 winter', 
+        "category": 'Equipment',
         "damage": 2,
         "health": 3
     },
     {
         "id": 5,
-        "name": 'sixth card', 
-        "category": 'equipment',
+        "name": '5 winter', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 6,
+        "name": '6 winter', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 7,
+        "name": '7 winter', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 8,
+        "name": '8 winter', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        
+        "id": 9,
+        "name": '9 winter', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 10,
+        "name": '10 winter', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+]
+
+const fall = [
+    { 
+        "id": 1,
+        "name": '1 fall',
+        "category": 'Character',
+        "damage": 1,
+        "health": 5, 
+    },
+    {
+        "id": 2,
+        "name": '2 fall', 
+        "category": 'Character',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 3,
+        "name": '3 fall', 
+        "category": 'Character',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 4,
+        "name": '4 fall', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 5,
+        "name": '5 fall', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 6,
+        "name": '6 fall', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 7,
+        "name": '7 fall', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 8,
+        "name": '8 fall', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        
+        "id": 9,
+        "name": '9 fall', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 10,
+        "name": '10 fall', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+]
+
+const summer = [
+    { 
+        "id": 1,
+        "name": '1 summer',
+        "category": 'Character',
+        "damage": 1,
+        "health": 5, 
+    },
+    {
+        "id": 2,
+        "name": '2 summer', 
+        "category": 'Character',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 3,
+        "name": '3 summer', 
+        "category": 'Character',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 4,
+        "name": '4 summer', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 5,
+        "name": '5 summer', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 6,
+        "name": '6 summer', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 7,
+        "name": '7 summer', 
+        "category": 'Equipment',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 8,
+        "name": '8 summer', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        
+        "id": 9,
+        "name": '9 summer', 
+        "category": 'Building',
+        "damage": 2,
+        "health": 3
+    },
+    {
+        "id": 10,
+        "name": '10 summer', 
+        "category": 'Building',
         "damage": 2,
         "health": 3
     },
@@ -77,7 +300,26 @@ export default function CardList(){
 
     return(
         <div>
-            <CardCollection cards={cards}/>
+            <div>
+                {season == 'Spring' && (
+                    <CardCollection cards={spring}/>
+                )}
+                {season == 'Fall' && (
+                    <div>
+                        <CardCollection cards={fall}/>
+                    </div>
+                )}
+                {season == 'Winter' &&(
+                    <div>
+                        <CardCollection cards={winter}/>
+                    </div>
+                )}
+                {season == 'Summer' &&(
+                    <div>
+                        <CardCollection cards={summer}/>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
