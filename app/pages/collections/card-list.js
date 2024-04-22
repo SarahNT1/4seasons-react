@@ -9,55 +9,63 @@ export default function CardList({season}){
         "category": 'Character',
         "damage": 1,
         "health": 5, 
+        "imageUrl": '/SummerCard1.png'
     },
     {
         "id": 2,
         "name": 'Spring Barbarian', 
         "category": 'Character',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/SummerCard1.png'
     },
     {
         "id": 3,
         "name": 'Spring Sorcerer', 
         "category": 'Character',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/SummerCard1.png'
     },
     {
         "id": 4,
-        "name": 'Spring Bow', 
-        "category": 'Equipment',
+        "name": 'acid-arrow', 
+        "category": 'spells',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/SummerCard1.png'
     },
     {
         "id": 5,
-        "name": 'Spring Axe', 
-        "category": 'Equipment',
+        "name": 'arcane-sword', 
+        "category": 'spells',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/OIP.jpg'
     },
     {
         "id": 6,
-        "name": 'Spring Staff', 
-        "category": 'Equipment',
+        "name": 'counterspell', 
+        "category": 'spells',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/SummerCard1.png'
     },
     {
         "id": 7,
-        "name": 'Spring Arrow', 
-        "category": 'Equipment',
+        "name": 'eldritch-blast', 
+        "category": 'spells',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/SummerCard1.png'
     },
     {
         "id": 8,
         "name": 'Spring Fountain', 
         "category": 'Building',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/SummerCard1.png'
     },
     {
         
@@ -65,14 +73,16 @@ export default function CardList({season}){
         "name": 'Spring Flower', 
         "category": 'Building',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/SummerCard1.png'
     },
     {
         "id": 10,
         "name": 'Spring Tree', 
         "category": 'Building',
         "damage": 2,
-        "health": 3
+        "health": 3,
+        "imageUrl": '/SummerCard1.png'
     },
 ]
 
