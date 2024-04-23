@@ -7,7 +7,7 @@ export default function Page(){
         }
     }
     return(
-        <div className="min-h-screen" style={styles.background1}>
+        <div className="min-h-screen bg-slate-950">
             <DeckUI />
         </div>
     )

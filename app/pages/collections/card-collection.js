@@ -22,6 +22,14 @@ export default function CardCollection({cards}){
     const[informationClicked, setInformationClicked] = useState(false);
     const[information, setInformation] = useState('');
 
+    const styles={
+        scrollBar: {
+            scrollbarColor: 'red',
+            scrollbarWidth: 'thin'
+        }
+        
+    }
+
     const handleInfo =(card)=>{
         if(!informationClicked){
             setInformation(card);
@@ -72,37 +80,29 @@ export default function CardCollection({cards}){
         }
     })
 
-    const handleScroll =(event)=>{
-        const container = event.target;
-        const scrollAmount = event.deltaY;
-        container.scrollTo({
-            top: 0,
-            left: container.scrollLeft + scrollAmount,
-            behavior: 'smooth'
-        })
-    }
-
     return(
-        <div className="h-fit ">
-            <div className="text-right mr-20 mb-11">
+        <div className="h-fit pb-10 rounded-2xl border-2 bg-slate-900">
+            <div className="text-right mr-20 mb-11 text-white">
                 Sort By:
-                <button className="border-2 h-10 w-24 m-3" title="Category" onClick={sortByCategory}>Category</button>
-                <button className="border-2 h-10 w-24" title="Name" onClick={sortByName}>Name</button>
+                {sortBy == 'category' ? (<button className="border-2 h-10 w-24 m-3 bg-orange-700" title="Category" onClick={sortByCategory}>Category</button>):
+                (<button className="border-2 h-10 w-24 m-3 bg-orange-500" title="Category" onClick={sortByCategory}>Category</button>)}
+                {sortBy == 'name' ? (<button className="border-2 h-10 w-24 bg-orange-700" title="Name" onClick={sortByName}>Name</button>):
+                (<button className="border-2 h-10 w-24 bg-orange-500" title="Name" onClick={sortByName}>Name</button>)}
+
             </div>
-            <div className="flex overflow-hidden overflow-x-scroll">
+            <div className="flex overflow-hidden overflow-x-scroll" style={styles.scrollBar}>
                 <div>
                     {sortBy == 'name' && (
-                        <div className="flex flex-nowrap whitespace-nowrap" onScroll={handleScroll}>
+                        <div className="flex flex-nowrap whitespace-nowrap">
                             {sortedItems.map((card, index) => {return(
                                 <div className="w-80 text-center " key={card.id}>
-                                    <div className="w-2/3 mt-5 ml-auto mr-auto">
+                                    <div className="w-2/3 mt-2 mb-5 ml-auto mr-auto">
                                         <div className="w-full ml-auto mr-auto">
                                             <Image width={300} height={500} src={card.imageUrl}/>
                                         </div>
                                         <div>
-                                            <button className="bg-red-500 w-1/2 h-10" onMouseEnter={() => handleInfo(card)} onClick={() => {setInformationClicked(true); loadDescription()}}>Information</button>
+                                            <button className="text-white border-2 bg-orange-500 w-1/2 h-10" onMouseEnter={() => handleInfo(card)} onClick={() => {setInformationClicked(true); loadDescription()}}>Information</button>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             )})}
@@ -112,15 +112,15 @@ export default function CardCollection({cards}){
                 
                 <div>
                     {sortBy == 'category' && (
-                        <div className="flex flex-nowrap whitespace-nowrap" onScroll={handleScroll}>
+                        <div className="flex flex-nowrap whitespace-nowrap">
                             {sortedItems.map((card, index) => {return(
                                 <div className="w-80 text-center " key={card.id}>
-                                    <div className="w-2/3 mt-5 ml-auto mr-auto">
+                                    <div className="w-2/3 mt-2 mb-5 ml-auto mr-auto">
                                         <div className="w-full ml-auto mr-auto">
                                             <Image width={300} height={500} src={card.imageUrl}/>
                                         </div>
                                         <div>
-                                            <button className="bg-red-500 w-1/2 h-10" onMouseEnter={() => handleInfo(card)} onClick={() => {setInformationClicked(true); loadDescription()}}>Information</button>
+                                            <button className="text-white border-2 bg-orange-500 w-1/2 h-10" onMouseEnter={() => handleInfo(card)} onClick={() => {setInformationClicked(true); loadDescription()}}>Information</button>
                                         </div>
                                         
                                     </div>
@@ -139,18 +139,48 @@ export default function CardCollection({cards}){
                                     <button className="bg-blue-500 w-2/3 h-10 border-2 mt-auto" onClick={() => setInformationClicked(false)}>Close</button>
                                 </div>
                             </div>
-                            {description != null && (
-                                <div className="border-2 w-1/3 h-4/5 bg-green-500">
-                                    <div>
-                                        {description}
+                            <div className="border-2 w-1/3 h-4/5 bg-green-500 text-center">
+                                <div className="bg-red-500 ml-auto mr-auto">
+                                    <div className="mt-20 h-12 border-2 text-xl bg-gray-400">
+                                        Health
                                     </div>
-                                </div> 
-                            )}
-                            {description == null && (
-                                <div className="border-2 w-1/3 h-4/5 bg-green-500">
-                                    No description
+                                    <div className="h-12 border-2 bg-gray-200">
+                                        {information.health}
+                                    </div>
+                                    <div className="h-12 border-2 text-xl bg-gray-400">
+                                        Damage
+                                    </div>
+                                    <div className="h-12 border-2 bg-gray-200">
+                                        {information.damage}
+                                    </div>
+                                    {description != null && (
+                                        <div>
+                                            <div>
+                                                <div className="text-xl bg-gray-400">
+                                                    Description
+                                                </div>
+                                                <div className="h-fit border-2 bg-gray-200 pl-5 pr-5">
+                                                    {description}
+                                                </div>
+                                            </div>
+                                            
+                                        </div> 
+                                    )}
+                                    {description == null && (
+                                        <div>
+                                            <div className="h-12 border-2 text-xl bg-gray-400">
+                                                Description
+                                            </div>
+                                            <div className="h-fit border-2 bg-gray-200">
+                                                {information.desc}
+                                            </div>
+                                        </div>
+                                        
+                                    )}
                                 </div>
-                            )}
+                            </div>
+                                
+                            
                         </div>
                     )}
                 </div>

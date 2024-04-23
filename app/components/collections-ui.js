@@ -17,7 +17,8 @@ export default function CollectionsUI(){
 
     const[season, setSeason] = useState('Spring');
 
-    const toggleSeason=()=>{
+    const toggleSeason=(event)=>{
+        // event.preventDefault();
         if(season == 'Spring'){
             setSeason('Summer')
         }
@@ -38,12 +39,12 @@ export default function CollectionsUI(){
                 <Header />
             </div>
             <div className="w-3/4 ml-auto mr-auto mt-28">
-                <div className="flex flex-row justify-center mt-20 p-4" style={styles.background2}>
-                    <div className="cursor-pointer text-lg" value={season} onClick={()=>toggleSeason()}>
+                <div className="flex flex-row justify-center mt-20 p-4">
+                    <div className="cursor-pointer border-2 w-1/5 h-fit p-5 bg-slate-900 rounded-2xl text-white text-center text-xl" value={season} onClick={()=>toggleSeason()}>
                         {season}
                     </div>
                 </div>
-                <div className="" style={styles.background1}>
+                <div className="">
                     <CardList season={season}/>
                 </div>
             </div>

@@ -19,14 +19,14 @@ export default function HomeContent(){
         <div className="w-3/4 ml-auto mr-auto">
             <div>
                 <div className="mt-28">
-                    <div className="text-xl text-center pt-2 pb-2 flex flex-row w-full" style={styles.background2}>
+                    <div className="text-xl text-center pt-2 pb-2 flex flex-row w-full bg-slate-900 rounded-t-2xl border-2 border-b-0">
                         <div className="w-1/5" onClick={() => {setHeaderName('Summer'); setClicked('Summer')}}>
                             {clicked == 'Summer' ? (
                                 <div className="bg-yellow-300 rounded-xl border-green-900 border-2 w-44 ml-auto mr-auto cursor-pointer">Summer</div>) :
                                 (<div className="bg-gray-300 rounded-xl border-green-900 border-2 w-44 ml-auto mr-auto cursor-pointer">Summer</div>)
                             }
                         </div>
-                        <div className="w-1/5" onClick={() => {setHeaderName('Spring'); setClicked('Spring')}}>
+                        <div className="w-1/5 " onClick={() => {setHeaderName('Spring'); setClicked('Spring')}}>
                             {clicked == 'Spring' ? (
                                 <div className="bg-pink-300 rounded-xl border-green-900 border-2 w-44 ml-auto mr-auto cursor-pointer">Spring</div>) :
                                 (<div className="bg-gray-300 rounded-xl border-green-900 border-2 w-44 ml-auto mr-auto cursor-pointer">Spring</div>)
@@ -51,7 +51,7 @@ export default function HomeContent(){
                             }
                         </div>
                     </div>
-                    <div className=" text-lg pl-10 h-80" style={styles.background1}>
+                    <div className="bg-slate-900 text-lg pl-10 h-80 border-2 border-t rounded-b-2xl text-white">
                         {headerName == 'Summer' && (
                             <div>
                                 Summer
@@ -79,11 +79,11 @@ export default function HomeContent(){
                         )}
                     </div>
                 </div>
-                <div className="mt-20">
-                    <div className="text-xl text-center pt-2 pb-2" style={styles.background2}>
+                <div className="mt-20 text-white">
+                    <div className="text-xl text-center pt-2 pb-2 bg-slate-900 border-2 border-b-0 rounded-t-2xl">
                         How To Play
                     </div>
-                    <div className="text-lg pl-10 h-80" style={styles.background1}>
+                    <div className="text-lg pl-10 h-80 bg-slate-900 border-2 border-t-1 rounded-b-2xl">
                         This is the documentation of how to play.
                     </div>
                 </div>

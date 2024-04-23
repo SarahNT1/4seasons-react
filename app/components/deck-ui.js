@@ -4,7 +4,7 @@ export default function DeckUI(){
     return(
         <div>
             <Header />
-            <div className="mt-20">
+            <div className="mt-20 text-white text-center">
                 <div>
                     This is the deck page. This is where the user deck will be displayed.
                 </div>
