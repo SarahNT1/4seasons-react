@@ -40,7 +40,7 @@ export default function CollectionsUI(){
             </div>
             <div className="w-3/4 ml-auto mr-auto mt-28">
                 <div className="flex flex-row justify-center mt-20 p-4">
-                    <div className="cursor-pointer border-2 w-1/5 h-fit p-5 bg-slate-900 rounded-2xl text-white text-center text-xl" value={season} onClick={()=>toggleSeason()}>
+                    <div className="cursor-pointer border-2 w-1/5 h-fit p-5 bg-orange-500 rounded-2xl text-white text-center text-xl hover:bg-orange-700" value={season} onClick={()=>toggleSeason()}>
                         {season}
                     </div>
                 </div>

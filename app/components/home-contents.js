@@ -54,27 +54,27 @@ export default function HomeContent(){
                     <div className="bg-slate-900 text-lg pl-10 h-80 border-2 border-t rounded-b-2xl text-white">
                         {headerName == 'Summer' && (
                             <div>
-                                Summer
+                                Summer Deck Overview
                             </div>
                         )}
                         {headerName == 'Spring' && (
                             <div>
-                                Spring
+                                Spring Deck Overview
                             </div>
                         )}
                         {headerName == 'Overview' && (
                             <div>
-                                Overview
+                                Game/Website Overview
                             </div>
                         )}
                         {headerName == 'Fall' && (
                             <div>
-                                Fall
+                                Fall Deck Overview
                             </div>
                         )}
                         {headerName == 'Winter' && (
                             <div>
-                                Winter
+                                Winter Deck Overview
                             </div>
                         )}
                     </div>
